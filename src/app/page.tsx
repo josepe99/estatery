@@ -9,9 +9,9 @@ import Metric from "@/src/components/Metric";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-gray-50">
       {/* HERO */}
-      <section className="relative">
+      <section className="relative pb-10 lg:pb-20">
         {/* Background grid / map area */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
           <div className="absolute inset-0 -z-10 bg-[url('/map-bg.png')] bg-cover bg-center opacity-30" />
@@ -76,8 +76,8 @@ export default function Home() {
         </div>
 
         {/* Left content */}
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 pb-20 pt-10 lg:grid-cols-[1fr,1fr] lg:gap-16 lg:pb-24 lg:pt-14">
-          <div className="max-w-2xl">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 pb-20 pt-12 lg:grid-cols-[1fr,1fr] lg:gap-20 lg:pb-24 lg:pt-16">
+          <div className="max-w-2xl space-y-6">
             <h1 className="text-5xl font-extrabold leading-[1.05] text-heading sm:text-6xl">
               Buy, rent, or sell
               <br />
@@ -85,21 +85,21 @@ export default function Home() {
               <br />
               easily
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
               A great platform to buy, sell, or even rent your properties without any
               commisions.
             </p>
 
             {/* Metrics */}
-            <div className="mt-10 grid max-w-xl grid-cols-2 gap-6">
+            <div className="mt-10 grid max-w-xl grid-cols-2 gap-8">
               <Metric value="50k+" label="renters" />
               <Metric value="10k+" label="properties" />
             </div>
 
             {/* Tabs + Search */}
-            <div className="mt-10">
+            <div className="mt-12">
               <Tabs tabs={["Rent", "Buy", "Sell"]} />
-              <div className="mt-4">
+              <div className="mt-6">
                 <SearchBar
                   location={{
                     label: "Location",
@@ -119,7 +119,7 @@ export default function Home() {
 
           {/* Right column placeholder for mobile / tablet (image below) */}
           <div className="lg:hidden">
-            <div className="relative mx-auto mt-6 max-w-xl overflow-hidden rounded-2xl ring-1 ring-gray-200">
+            <div className="relative mx-auto mt-8 max-w-xl overflow-hidden rounded-2xl ring-1 ring-gray-200">
               <Image
                 src="/hero-house.jpg"
                 alt="Featured house"
@@ -130,7 +130,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-6">
+            <div className="mt-8">
               <PropertyCard
                 imageSrc="/house-1.jpg"
                 price="$1,600"

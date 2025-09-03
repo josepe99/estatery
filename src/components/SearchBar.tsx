@@ -19,9 +19,9 @@ export default function SearchBar({
 }) {
   return (
     <div className="w-full overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-card">
-      <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5">
+      <div className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:gap-8">
         {/* Location */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-[160px]">
           <div className="text-xs font-medium uppercase tracking-wide text-gray-500">
             {location.label}
           </div>
@@ -34,7 +34,7 @@ export default function SearchBar({
         <div className="hidden h-10 w-px shrink-0 bg-gray-200 sm:block" />
 
         {/* Date */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-[160px]">
           <div className="text-xs font-medium uppercase tracking-wide text-gray-500">
             {date.label}
           </div>
@@ -45,8 +45,8 @@ export default function SearchBar({
         </div>
 
         {/* CTA */}
-        <div className="sm:ml-auto">
-          <button className="mt-1 inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-primary hover:bg-primary/90 sm:w-auto">
+        <div className="sm:ml-auto w-full sm:w-auto">
+          <button className="mt-1 inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-primary hover:bg-primary/90 sm:w-auto">
             {ctaLabel}
           </button>
         </div>
