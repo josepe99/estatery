@@ -6,15 +6,16 @@ import Tabs from "@/src/components/Tabs";
 import PropertyCard from "@/src/components/PropertyCard";
 import SearchBar from "@/src/components/SearchBar";
 import Metric from "@/src/components/Metric";
+import TenantLandlordSection from "../components/TenantLandlordSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative pb-10 lg:pb-20">
+      <section className="relative pb-10 lg:pb-20 ">
         {/* Background grid / map area */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
-          <div className="absolute inset-0 -z-10 bg-[url('/map-bg.png')] bg-cover bg-center opacity-30" />
+          <div className="absolute inset-0 -z-10 bg-[url('/map.png')] bg-cover bg-center opacity-30" />
           {/* floating card 1 */}
           <div className="absolute left-8 top-16 w-[324px] h-[416px] rounded-2xl bg-white shadow-card ring-1 ring-gray-200/60">
             <div className="relative h-[200px] w-full overflow-hidden rounded-t-2xl">
@@ -144,6 +145,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TenantLandlordSection />
     </main>
   );
 }
