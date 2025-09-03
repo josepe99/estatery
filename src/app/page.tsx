@@ -45,10 +45,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* floating mail badge + pin path (decorative) */}
-          <div className="absolute right-16 top-28 flex h-14 w-14 items-center justify-center rounded-full bg-primary/90 text-white shadow-lg">
-            <Mail className="h-6 w-6" />
-          </div>
 
           {/* floating card 2 */}
           <div className="absolute bottom-12 right-16 rounded-2xl border border-primary/30 bg-white p-3 shadow-card">
