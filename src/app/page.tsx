@@ -1,103 +1,149 @@
+"use client";
+
 import Image from "next/image";
+import { Calendar, MapPin, Bath, BedDouble, Scan, Mail } from "lucide-react";
+import Tabs from "@/src/components/Tabs";
+import PropertyCard from "@/src/components/PropertyCard";
+import SearchBar from "@/src/components/SearchBar";
+import Metric from "@/src/components/Metric";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main>
+      {/* HERO */}
+      <section className="relative">
+        {/* Background grid / map area */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
+          <div className="absolute inset-0 -z-10 bg-[url('/map-bg.png')] bg-cover bg-center opacity-30" />
+          {/* floating card 1 */}
+          <div className="absolute left-8 top-16 w-[520px] rounded-2xl bg-white shadow-card ring-1 ring-gray-200/60">
+            <div className="relative h-[220px] w-full overflow-hidden rounded-t-2xl">
+              <Image
+                src="/hero-house.jpg"
+                alt="Featured house"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
+            <div className="space-y-3 p-6">
+              <div className="text-primary font-semibold text-2xl leading-none">
+                $2,700<span className="text-sm font-normal text-gray-500"> /month</span>
+              </div>
+              <div className="text-lg font-semibold tracking-tight">Beverly Springfield</div>
+              <div className="text-sm text-secondary">2821 Lake Sevilla, Palm Harbor, TX</div>
+              <div className="mt-2 flex items-center gap-6 text-sm text-gray-700">
+                <span className="inline-flex items-center gap-2">
+                  <BedDouble className="h-4 w-4" /> 4
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Bath className="h-4 w-4" /> 2
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <Scan className="h-4 w-4" /> 6×7.5 m²
+                </span>
+              </div>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          {/* floating mail badge + pin path (decorative) */}
+          <div className="absolute right-16 top-28 flex h-14 w-14 items-center justify-center rounded-full bg-primary/90 text-white shadow-lg">
+            <Mail className="h-6 w-6" />
+          </div>
+
+          {/* floating card 2 */}
+          <div className="absolute bottom-12 right-16 w-[320px] rounded-2xl border border-primary/30 bg-white p-3 shadow-card">
+            <div className="relative h-[140px] w-full overflow-hidden rounded-xl">
+              <Image src="/house-1.jpg" alt="Tarpon Bay" fill className="object-cover" />
+            </div>
+            <div className="space-y-2 p-2">
+              <div className="text-primary font-semibold">$1,600<span className="text-xs text-gray-500"> /month</span></div>
+              <div className="text-base font-semibold">Tarpon Bay</div>
+              <div className="text-xs text-secondary">Palm Harbor, TX</div>
+              <div className="mt-1 flex items-center gap-4 text-xs text-gray-700">
+                <span className="inline-flex items-center gap-1">
+                  <BedDouble className="h-3.5 w-3.5" /> 4
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Bath className="h-3.5 w-3.5" /> 2
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Scan className="h-3.5 w-3.5" /> 6×8 m²
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Left content */}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 pb-20 pt-10 lg:grid-cols-[1fr,1fr] lg:gap-16 lg:pb-24 lg:pt-14">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl font-extrabold leading-[1.05] text-heading sm:text-6xl">
+              Buy, rent, or sell
+              <br />
+              your property
+              <br />
+              easily
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
+              A great platform to buy, sell, or even rent your properties without any
+              commisions.
+            </p>
+
+            {/* Metrics */}
+            <div className="mt-10 grid max-w-xl grid-cols-2 gap-6">
+              <Metric value="50k+" label="renters" />
+              <Metric value="10k+" label="properties" />
+            </div>
+
+            {/* Tabs + Search */}
+            <div className="mt-10">
+              <Tabs tabs={["Rent", "Buy", "Sell"]} />
+              <div className="mt-4">
+                <SearchBar
+                  location={{
+                    label: "Location",
+                    value: "Barcelona, Spain",
+                    icon: <MapPin className="h-4 w-4" />,
+                  }}
+                  date={{
+                    label: "When",
+                    value: "Select Move-in Date",
+                    icon: <Calendar className="h-4 w-4" />,
+                  }}
+                  ctaLabel="Browse Properties"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right column placeholder for mobile / tablet (image below) */}
+          <div className="lg:hidden">
+            <div className="relative mx-auto mt-6 max-w-xl overflow-hidden rounded-2xl ring-1 ring-gray-200">
+              <Image
+                src="/hero-house.jpg"
+                alt="Featured house"
+                width={1200}
+                height={800}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+
+            <div className="mt-6">
+              <PropertyCard
+                imageSrc="/house-1.jpg"
+                price="$1,600"
+                title="Tarpon Bay"
+                address="Palm Harbor, TX"
+                beds={4}
+                baths={2}
+                area="6×8 m²"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
