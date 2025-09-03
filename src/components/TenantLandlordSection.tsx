@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Camera, Home, ChevronRight } from "lucide-react";
+import { Home, ChevronRight, Youtube } from "lucide-react";
 
 export default function TenantLandlordSection() {
   const [tab, setTab] = useState<"tenants" | "landlords">("tenants");
@@ -32,7 +32,7 @@ export default function TenantLandlordSection() {
           <div className="absolute -left-4 top-6">
             <div className="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white/95 px-4 py-3 shadow-card backdrop-blur">
               <span className="grid h-10 w-10 place-content-center rounded-full bg-primary/10">
-                <Camera className="h-5 w-5 text-primary" />
+                <Youtube className="h-5 w-5 text-primary" />
               </span>
               <div>
                 <div className="font-semibold">Virtual home tour</div>
@@ -45,11 +45,12 @@ export default function TenantLandlordSection() {
 
           {/* Tarjeta: Find the best deal */}
           <div className="absolute -bottom-6 left-10">
-            <div className="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-card">
-              <span className="grid h-10 w-10 place-content-center rounded-full bg-primary/10">
-                <Home className="h-5 w-5 text-primary" />
+            <div className="relative flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-card">
+              {/* Icono flotante */}
+              <span className="absolute -top-5 -right-1 grid h-12 w-12 place-content-center rounded-full bg-primary shadow-lg border-4 border-white">
+                <Home className="h-6 w-6 text-white" />
               </span>
-              <div>
+              <div className="pl-10 pr-2 py-1">
                 <div className="font-semibold">Find the best deal</div>
                 <div className="text-sm text-secondary">
                   Browse thousands of properties
@@ -64,21 +65,19 @@ export default function TenantLandlordSection() {
           <div className="mb-6 inline-flex rounded-2xl border border-gray-200 bg-white p-1 shadow-card">
             <button
               onClick={() => setTab("tenants")}
-              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
-                tab === "tenants"
+              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${tab === "tenants"
                   ? "bg-primary/10 text-primary"
                   : "text-gray-700 hover:bg-gray-50"
-              }`}
+                }`}
             >
               For tenants
             </button>
             <button
               onClick={() => setTab("landlords")}
-              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
-                tab === "landlords"
+              className={`rounded-xl px-4 py-2 text-sm font-medium transition ${tab === "landlords"
                   ? "bg-primary/10 text-primary"
                   : "text-gray-700 hover:bg-gray-50"
-              }`}
+                }`}
             >
               For landlords
             </button>

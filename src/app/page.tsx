@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Calendar, MapPin, Bath, BedDouble, Scan, Mail } from "lucide-react";
 import Tabs from "@/src/components/Tabs";
