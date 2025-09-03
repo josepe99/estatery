@@ -53,7 +53,7 @@ export default function Home() {
           </div>
 
           {/* floating card 2 */}
-          <div className="absolute bottom-12 right-16 w-[320px] rounded-2xl border border-primary/30 bg-white p-3 shadow-card">
+          <div className="absolute bottom-12 right-16 rounded-2xl border border-primary/30 bg-white p-3 shadow-card">
             <div className="relative h-[140px] w-full overflow-hidden rounded-xl">
               <Image src="/casa-marron.png" alt="Tarpon Bay" fill className="object-cover" />
             </div>

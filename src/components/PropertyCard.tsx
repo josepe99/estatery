@@ -21,7 +21,10 @@ export default function PropertyCard({
   area,
 }: Props) {
   return (
-    <article className="overflow-hidden rounded-2xl bg-white shadow-card ring-1 ring-gray-200 flex flex-col">
+    <article
+      className="overflow-hidden rounded-2xl bg-white shadow-card ring-1 ring-gray-200 flex flex-col border-2 border-primary"
+      style={{ width: '198px', height: '280px' }}
+    >
       <div className="relative h-56 w-full">
         <Image src={imageSrc} alt={title} fill className="object-cover" />
       </div>
