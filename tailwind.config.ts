@@ -2,6 +2,10 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  safelist: [
+    { pattern: /^(rounded(-(none|sm|md|lg|xl|2xl|3xl|full))?)$/ },
+    { pattern: /^rounded-(t|r|b|l|tl|tr|br|bl)-(sm|md|lg|xl|2xl|3xl|full)$/ }
+  ],
   theme: {
     extend: {
       colors: {

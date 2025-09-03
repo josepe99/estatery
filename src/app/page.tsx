@@ -16,10 +16,10 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 overflow-hidden lg:block">
           <div className="absolute inset-0 -z-10 bg-[url('/map-bg.png')] bg-cover bg-center opacity-30" />
           {/* floating card 1 */}
-          <div className="absolute left-8 top-16 w-[520px] rounded-2xl bg-white shadow-card ring-1 ring-gray-200/60">
-            <div className="relative h-[220px] w-full overflow-hidden rounded-t-2xl">
+          <div className="absolute left-8 top-16 w-[324px] h-[416px] rounded-2xl bg-white shadow-card ring-1 ring-gray-200/60">
+            <div className="relative h-[200px] w-full overflow-hidden rounded-t-2xl">
               <Image
-                src="/hero-house.jpg"
+                src="/casa-techo-azul.png"
                 alt="Featured house"
                 fill
                 priority
@@ -54,7 +54,7 @@ export default function Home() {
           {/* floating card 2 */}
           <div className="absolute bottom-12 right-16 w-[320px] rounded-2xl border border-primary/30 bg-white p-3 shadow-card">
             <div className="relative h-[140px] w-full overflow-hidden rounded-xl">
-              <Image src="/house-1.jpg" alt="Tarpon Bay" fill className="object-cover" />
+              <Image src="/casa-marron.png" alt="Tarpon Bay" fill className="object-cover" />
             </div>
             <div className="space-y-2 p-2">
               <div className="text-primary font-semibold">$1,600<span className="text-xs text-gray-500"> /month</span></div>
