@@ -91,7 +91,7 @@ export default function Home() {
             </p>
 
             {/* Metrics */}
-            <div className="mt-10 grid max-w-xl grid-cols-2 gap-8">
+            <div className="text-primary mt-10 grid max-w-xl grid-cols-2 gap-8">
               <Metric value="50k+" label="renters" />
               <Metric value="10k+" label="properties" />
             </div>

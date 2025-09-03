@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         heading: "#111827", // títulos
         secondary: "#6B7280", // textos secundarios
-        primary: "#7C3AED", // morado
+        primary: "#7065F0", // morado
       },
       boxShadow: {
         card: "0 8px 24px rgba(17, 24, 39, 0.06)",
