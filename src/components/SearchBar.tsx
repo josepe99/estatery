@@ -27,7 +27,7 @@ export default function SearchBar({
           </div>
           <div className="mt-1 flex items-center gap-2 text-gray-900">
             <span className="text-gray-400">{location.icon}</span>
-            <span className="text-sm sm:text-base">{location.value}</span>
+            <span className="text-sm sm:text-base font-bold">{location.value}</span>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ export default function SearchBar({
           </div>
           <div className="mt-1 flex items-center gap-2 text-gray-900">
             <span className="text-gray-400">{date.icon}</span>
-            <span className="text-sm sm:text-base">{date.value}</span>
+            <span className="text-sm sm:text-base font-bold">{date.value}</span>
           </div>
         </div>
 
